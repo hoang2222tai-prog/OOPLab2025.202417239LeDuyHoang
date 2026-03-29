@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("1. PT bac 1");
+            System.out.println("2. He PT");
+            System.out.println("3. PT bac 2");
+            System.out.println("0. Thoat");
+            System.out.print("Chon: ");
+
+            int c = sc.nextInt();
+            if (c == 0) break;
+
+            if (c == 1) {
+                double a, b;
+                System.out.print("a: ");
+                a = sc.nextDouble();
+                System.out.print("b: ");
+                b = sc.nextDouble();
+
+                if (a == 0) {
+                    if (b == 0) System.out.println("VSN");
+                    else System.out.println("VN");
+                } else {
+                    System.out.println("x = " + (-b / a));
+                }
+            }
+
+            else if (c == 2) {
+                double a11, a12, b1, a21, a22, b2;
+
+                System.out.print("a11: "); a11 = sc.nextDouble();
+                System.out.print("a12: "); a12 = sc.nextDouble();
+                System.out.print("b1: ");  b1  = sc.nextDouble();
+                System.out.print("a21: "); a21 = sc.nextDouble();
+                System.out.print("a22: "); a22 = sc.nextDouble();
+                System.out.print("b2: ");  b2  = sc.nextDouble();
+
+                double d  = a11 * a22 - a21 * a12;
+                double d1 = b1 * a22 - b2 * a12;
+                double d2 = a11 * b2 - a21 * b1;
+
+                if (d == 0) {
+                    if (d1 == 0 && d2 == 0) System.out.println("VSN");
+                    else System.out.println("VN");
+                } else {
+                    System.out.println("x1 = " + (d1 / d));
+                    System.out.println("x2 = " + (d2 / d));
+                }
+            }
+
+            else if (c == 3) {
+                double a, b, c2;
+                System.out.print("a: ");
+                a = sc.nextDouble();
+                System.out.print("b: ");
+                b = sc.nextDouble();
+                System.out.print("c: ");
+                c2 = sc.nextDouble();
+
+                if (a == 0) {
+                    if (b == 0) {
+                        if (c2 == 0) System.out.println("VSN");
+                        else System.out.println("VN");
+                    } else {
+                        System.out.println("x = " + (-c2 / b));
+                    }
+                } else {
+                    double d = b * b - 4 * a * c2;
+
+                    if (d < 0) System.out.println("VN");
+                    else if (d == 0) System.out.println("x = " + (-b / (2 * a)));
+                    else {
+                        System.out.println("x1 = " + ((-b + Math.sqrt(d)) / (2 * a)));
+                        System.out.println("x2 = " + ((-b - Math.sqrt(d)) / (2 * a)));
+                    }
+                }
+            }
+
+            System.out.println();
+        }
+    }
+}
