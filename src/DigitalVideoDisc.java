@@ -1,40 +1,62 @@
-public class DigitalVideoDisc {
-    private String title;
-    private String category;
-    private String director;
-    private int length;
-    private float cost;
+public class DigitalVideoDisc{
+    private String ten;
+    private String theloai;
+    private String daodien;
+    private int thoiluong;
+    private float gia;
+    private static int dem=0;
+    private int id;
 
-    public DigitalVideoDisc(String title) {
-        this.title = title;
+    public DigitalVideoDisc(String ten){
+        this.ten=ten;
+        dem++;
+        this.id=dem;
     }
 
-    public DigitalVideoDisc(String title, String category, float cost) {
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
+    public DigitalVideoDisc(String ten,String theloai,float gia){
+        this.ten=ten;
+        this.theloai=theloai;
+        this.gia=gia;
+        dem++;
+        this.id=dem;
     }
 
-    public DigitalVideoDisc(String title, String category, String director, float cost) {
-        this.title = title;
-        this.category = category;
-        this.director = director;
-        this.cost = cost;
+    public DigitalVideoDisc(String ten,String theloai,String daodien,float gia){
+        this.ten=ten;
+        this.theloai=theloai;
+        this.daodien=daodien;
+        this.gia=gia;
+        dem++;
+        this.id=dem;
     }
 
-    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        this.title = title;
-        this.category = category;
-        this.director = director;
-        this.length = length;
-        this.cost = cost;
+    public DigitalVideoDisc(String ten,String theloai,String daodien,int thoiluong,float gia){
+        this.ten=ten;
+        this.theloai=theloai;
+        this.daodien=daodien;
+        this.thoiluong=thoiluong;
+        this.gia=gia;
+        dem++;
+        this.id=dem;
     }
 
-    public String getTitle() {
-        return title;
+    public float getGia(){
+        return gia;
     }
 
-    public float getCost() {
-        return cost;
+    public String getTen(){
+        return ten;
+    }
+
+    public void setTen(String ten){
+        this.ten=ten;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public String toString(){
+        return id+" "+ten+" "+theloai+" "+gia;
     }
 }
