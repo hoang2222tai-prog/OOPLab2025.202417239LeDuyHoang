@@ -4,6 +4,23 @@ public class Cart{
     private int count=0;
 
     public void add(DigitalVideoDisc d){
+        public void add(DigitalVideoDisc d1,DigitalVideoDisc d2){
+    add(d1);
+    add(d2);
+}
+
+public void add(DigitalVideoDisc[] ds){
+    for(int i=0;i<ds.length;i++){
+        add(ds[i]);
+    }
+}
+
+public void add(DigitalVideoDisc... ds){
+    for(int i=0;i<ds.length;i++){
+        add(ds[i]);
+    }
+}
+
         if(count<MAX){
             list[count]=d;
             count++;
@@ -33,21 +50,5 @@ public class Cart{
             tong+=list[i].getGia();
         }
         return tong;
-    }
-}
-public void add(DigitalVideoDisc d1,DigitalVideoDisc d2){
-    add(d1);
-    add(d2);
-}
-
-public void add(DigitalVideoDisc[] ds){
-    for(int i=0;i<ds.length;i++){
-        add(ds[i]);
-    }
-}
-
-public void add(DigitalVideoDisc... ds){
-    for(int i=0;i<ds.length;i++){
-        add(ds[i]);
     }
 }
